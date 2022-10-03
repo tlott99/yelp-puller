@@ -37,7 +37,7 @@ const SearchResults = ({food, title}) =>{
                                             Address: {value.location.address1}<br/>
                                             {value.location.city}, {value.location.state}<br/>
                                             Phone Number: {value.display_phone}<br/>
-                                            Website: {value.url}
+                                            <a href={""+value.url}>Please don't click me ;)</a>
                                           </Typography>
                                         </CardContent>
                                         <CardActions>
