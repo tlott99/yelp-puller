@@ -1,22 +1,19 @@
 import React from 'react'
-import {Typography, Grid, Button} from '@mui/material'
+import {Typography, Grid, Button, Card, CardContent, Paper} from '@mui/material'
 import {Link} from 'react-router-dom'
+import SearchResults from '../components/searchResults'
 
-const Search = () => {
+const Search = ({searchResults}) => {
+    const people = ["Travis", "Sabra", "Sierra", "Valerie","Derek","Troy"]
+    const cheapFood = searchResults.filter((value) => value.price === "$")
+    const moderateFood = searchResults.filter((value) => value.price === "$$")
+    const expensiveFood = searchResults.filter((value) => value.price === "$$$")
+    
     return (
         <>
-        <Grid container spacing={2}>
-            <Grid item xs={12} md={12} lg={12}>
-                <Typography variant='h2'>I am The Search Page</Typography>
-                </Grid>
-            <Grid item xs={6} md={2} lg={1}>Hello</Grid>
-            <Grid item xs={6} md={2} lg={1}>Travis</Grid>
-            <Grid item xs={6} md={2} lg={1}>Sabra</Grid>
-            <Grid item xs={6} md={2} lg={1}>Sierra</Grid>
-            <Grid item xs={6} md={2} lg={1}>Valerie</Grid>
-        </Grid>
-        <Typography>I'm the Test Grid</Typography>
-        <Button component={Link} to='/testgrid' variant="outlined">TestGrid</Button>
+        <SearchResults food={cheapFood} title={"cheap food"}/>
+        <SearchResults food={moderateFood} title={"moderate food"}/>
+        <SearchResults food={expensiveFood} title={"expensive food"}/>
         </>
     )
 }
