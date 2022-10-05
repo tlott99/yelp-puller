@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { Typography, Box, AppBar, Toolbar, IconButton, Button, TextField, InputAdornment, Paper } from '@mui/material';
-import TestGrid from '../pages/TestGrid'
 import MenuIcon from '@mui/icons-material/Menu'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Search from '../pages/Search'
@@ -70,7 +69,6 @@ const Layout = () =>{
         <Typography variant="h2">{searchText}</Typography>
         <Routes>
           <Route path="/" element={<Search searchResults={results}/>}/>
-          <Route path="/testgrid" element={<TestGrid/>}/>
           <Route path="/search" element={<Search searchResults={results}/>}/>
         </Routes>
         </BrowserRouter>
