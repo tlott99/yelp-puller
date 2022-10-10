@@ -5,10 +5,12 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Search from '../pages/Search'
 import SearchIcon from '@mui/icons-material/Search';
 import yelp from '../api/yelp'
+import Detail from '../pages/Detail'
 
 const Layout = () =>{
-    const [searchText, setSearchText]     =useState("Your Search Results")
+    const [searchText, setSearchText] =useState("Your Search Results")
     const [results, setResults] = useState([])
+    const [restId, setRestId] = useState('nothing to see here')
     //let mySearchTest = "I'm here."
 
     
@@ -68,8 +70,24 @@ const Layout = () =>{
         </Box>
         <Typography variant="h2">{searchText}</Typography>
         <Routes>
-          <Route path="/" element={<Search searchResults={results}/>}/>
-          <Route path="/search" element={<Search searchResults={results}/>}/>
+          <Route 
+          exact 
+          path="/" 
+          element={<Search searchResults={results} setRestId={setRestId}/>}
+          />
+
+          <Route 
+          exact 
+          path="/search" 
+          element={<Search searchResults={results} setRestId={setRestId}/>}
+          />
+
+          <Route 
+          exact 
+          path="/detail" 
+          element={<Detail restId={restId}/>}
+          />
+
         </Routes>
         </BrowserRouter>
         </Paper>

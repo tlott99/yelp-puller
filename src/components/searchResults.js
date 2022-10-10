@@ -1,6 +1,15 @@
 import {Button, Card, CardActions, CardContent, CardMedia, Grid, Typography} from '@mui/material'
 import React from 'react'
-const SearchResults = ({food, title}) =>{
+import { useNavigate } from 'react-router-dom'
+
+const SearchResults = ({food, title, setRestId}) =>{
+
+  const navigate = useNavigate()
+  const goToDetails = (id) => {
+    setRestId(id)
+    navigate("/detail")
+  }
+
     return(
         <>  
           {
@@ -41,8 +50,7 @@ const SearchResults = ({food, title}) =>{
                                           </Typography>
                                         </CardContent>
                                         <CardActions>
-                                          <Button size="small">Share</Button>
-                                          <Button size="small">Learn More</Button>
+                                          <Button size="small" onClick={(e) => goToDetails(value.id)}>Details</Button>
                                         </CardActions>
                                       </Card>
                                     }
