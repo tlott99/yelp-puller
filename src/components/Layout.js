@@ -11,6 +11,8 @@ const Layout = () =>{
     const [searchText, setSearchText] =useState("Your Search Results")
     const [results, setResults] = useState([])
     const [restId, setRestId] = useState('nothing to see here')
+
+    
     //let mySearchTest = "I'm here."
 
     
@@ -18,6 +20,10 @@ const Layout = () =>{
       const response = await yelp('24416', term)
       console.log(response.data.businesses)
       setResults(response.data.businesses)
+
+      const response2 = await fetch("/api/yelp")
+      const data = await response2.json()
+      console.log()
     }
 
     const doSearch= (e) => {
