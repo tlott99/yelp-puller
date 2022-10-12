@@ -35,9 +35,9 @@ const Layout = () =>{
       setLocationValue(e.target.value)
     }
     
-    useEffect(() => {
-        searchApi('Chinese Food')
-    } , [])
+      // useEffect(() => {
+      //     searchApi('Chinese Food')
+      // } , [])
 
     return (
       <>
