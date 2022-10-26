@@ -10,9 +10,9 @@ const Search = ({searchResults, setRestId}) => {
     const expensiveFood = searchResults.filter((value) => value.price === "$$$")
     return (
         <>
-        <SearchResults food={cheapFood} title={"cheap food"} setRestId={setRestId}/>
-        <SearchResults food={moderateFood} title={"moderate food"} setRestId={setRestId}/>
-        <SearchResults food={expensiveFood} title={"expensive food"} setRestId={setRestId}/>
+        <SearchResults food={cheapFood} title={"Cheap Food"} setRestId={setRestId}/>
+        <SearchResults food={moderateFood} title={"Moderately Priced Food"} setRestId={setRestId}/>
+        <SearchResults food={expensiveFood} title={"Expensive Food"} setRestId={setRestId}/>
         </>
     )
 }
